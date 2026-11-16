@@ -1,0 +1,170 @@
+﻿method,source,chunk_id,page_number,chunk_length,text
+fixed_size,dbms_sample.pdf,1,1,799,"DATABASE MANAGEMENT SYSTEM (DBMS)
+1. Introduction to DBMS
+A Database Management System (DBMS) is software that allows users
+to create, store, organize, retrieve, and manage data efficiently.
+Examples of DBMS include MySQL, PostgreSQL, Oracle Database,
+and Microsoft SQL Server.
+2. Database Normalization
+Database normalization is the process of organizing data into
+related tables to reduce data redundancy and improve data integrity.
+Data redundancy means storing the same information repeatedly.
+Excessive redundancy wastes storage and can cause inconsistency.
+3. First Normal Form (1NF)
+A table satisfies First Normal Form when each cell contains
+a single atomic value and there are no repeating groups.
+4. Second Normal Form (2NF)
+A table satisfies Second Normal Form when it is in 1NF and
+every"
+fixed_size,dbms_sample.pdf,2,1,204,"a single atomic value and there are no repeating groups.
+4. Second Normal Form (2NF)
+A table satisfies Second Normal Form when it is in 1NF and
+every non-key attribute depends on the entire candidate key."
+fixed_size,dbms_sample.pdf,3,2,799,"DATABASE MANAGEMENT SYSTEM (DBMS)
+CONTINUED
+5. Third Normal Form (3NF)
+A table satisfies Third Normal Form when it is in 2NF and
+has no transitive dependency of non-key attributes on a key.
+6. Primary Key
+A primary key is a column or combination of columns that
+uniquely identifies each record in a database table.
+A primary key cannot contain duplicate or NULL values.
+7. Foreign Key
+A foreign key is a column or combination of columns that
+references a primary key in another table.
+It helps establish relationships between database tables.
+8. Database Relationships
+One-to-One: One record is associated with one record.
+One-to-Many: One record can be associated with multiple records.
+Many-to-Many: Multiple records can be associated with
+multiple records through a junction table.
+9. Benefits of"
+fixed_size,dbms_sample.pdf,4,2,295,"be associated with multiple records.
+Many-to-Many: Multiple records can be associated with
+multiple records through a junction table.
+9. Benefits of Normalization
+- Reduces data redundancy.
+- Improves data consistency.
+- Prevents update anomalies.
+- Makes database structures easier to maintain."
+sentence_aware,dbms_sample.pdf,1,1,706,"DATABASE MANAGEMENT SYSTEM (DBMS)
+1. Introduction to DBMS
+A Database Management System (DBMS) is software that allows users
+to create, store, organize, retrieve, and manage data efficiently. Examples of DBMS include MySQL, PostgreSQL, Oracle Database,
+and Microsoft SQL Server. 2. Database Normalization
+Database normalization is the process of organizing data into
+related tables to reduce data redundancy and improve data integrity. Data redundancy means storing the same information repeatedly. Excessive redundancy wastes storage and can cause inconsistency. 3. First Normal Form (1NF)
+A table satisfies First Normal Form when each cell contains
+a single atomic value and there are no repeating groups."
+sentence_aware,dbms_sample.pdf,2,1,291,"3. First Normal Form (1NF)
+A table satisfies First Normal Form when each cell contains
+a single atomic value and there are no repeating groups. 4. Second Normal Form (2NF)
+A table satisfies Second Normal Form when it is in 1NF and
+every non-key attribute depends on the entire candidate key."
+sentence_aware,dbms_sample.pdf,3,2,784,"DATABASE MANAGEMENT SYSTEM (DBMS)
+CONTINUED
+5. Third Normal Form (3NF)
+A table satisfies Third Normal Form when it is in 2NF and
+has no transitive dependency of non-key attributes on a key. 6. Primary Key
+A primary key is a column or combination of columns that
+uniquely identifies each record in a database table. A primary key cannot contain duplicate or NULL values. 7. Foreign Key
+A foreign key is a column or combination of columns that
+references a primary key in another table. It helps establish relationships between database tables. 8. Database Relationships
+One-to-One: One record is associated with one record. One-to-Many: One record can be associated with multiple records. Many-to-Many: Multiple records can be associated with
+multiple records through a junction table."
+sentence_aware,dbms_sample.pdf,4,2,258,"Many-to-Many: Multiple records can be associated with
+multiple records through a junction table. 9. Benefits of Normalization
+- Reduces data redundancy. - Improves data consistency. - Prevents update anomalies. - Makes database structures easier to maintain."
+fixed_size,dbms_transactions_sample.pdf,1,1,800,"DATABASE TRANSACTIONS AND SQL
+1. ACID Properties
+ACID is a set of four properties that ensure reliable database transactions.
+Atomicity:
+A transaction is treated as a single unit. Either all its operations
+are completed or none of them are applied.
+Consistency:
+A transaction moves the database from one valid state to another
+while maintaining database rules and constraints.
+Isolation:
+Concurrent transactions should not interfere with each other.
+Each transaction should behave as if it were executed independently.
+Durability:
+Once a transaction is committed, its changes remain permanent,
+even after a system failure.
+2. Database Transactions
+A transaction is a sequence of database operations performed
+as one logical unit of work.
+COMMIT permanently saves the changes made by a transaction.
+RO"
+fixed_size,dbms_transactions_sample.pdf,2,1,217,"transaction is a sequence of database operations performed
+as one logical unit of work.
+COMMIT permanently saves the changes made by a transaction.
+ROLLBACK cancels uncommitted changes and restores the previous state."
+fixed_size,dbms_transactions_sample.pdf,3,2,800,"SQL COMMANDS AND INDEXING
+3. SQL Commands
+SELECT:
+Retrieves records from a database table.
+INSERT:
+Adds new records to a database table.
+UPDATE:
+Modifies existing records in a database table.
+DELETE:
+Removes records from a database table.
+CREATE TABLE:
+Creates a new table in a database.
+4. Database Indexing
+A database index is a data structure that improves the speed
+of data retrieval operations.
+Indexes help databases find records without scanning every row
+of a table.
+A primary index is generally associated with the primary key
+of a database table.
+A secondary index provides an additional way to access records
+using columns other than the primary key.
+5. Advantages and Limitations of Indexing
+Advantages:
+- Improves data retrieval speed.
+- Helps optimize search queries.
+- Reduces the need"
+fixed_size,dbms_transactions_sample.pdf,4,2,320,"rimary key.
+5. Advantages and Limitations of Indexing
+Advantages:
+- Improves data retrieval speed.
+- Helps optimize search queries.
+- Reduces the need for full table scans.
+Limitations:
+- Requires additional storage space.
+- Can slow down INSERT, UPDATE and DELETE operations
+  because indexes may need to be maintained."
+sentence_aware,dbms_transactions_sample.pdf,1,1,797,"DATABASE TRANSACTIONS AND SQL
+1. ACID Properties
+ACID is a set of four properties that ensure reliable database transactions. Atomicity:
+A transaction is treated as a single unit. Either all its operations
+are completed or none of them are applied. Consistency:
+A transaction moves the database from one valid state to another
+while maintaining database rules and constraints. Isolation:
+Concurrent transactions should not interfere with each other. Each transaction should behave as if it were executed independently. Durability:
+Once a transaction is committed, its changes remain permanent,
+even after a system failure. 2. Database Transactions
+A transaction is a sequence of database operations performed
+as one logical unit of work. COMMIT permanently saves the changes made by a transaction."
+sentence_aware,dbms_transactions_sample.pdf,2,1,129,COMMIT permanently saves the changes made by a transaction. ROLLBACK cancels uncommitted changes and restores the previous state.
+sentence_aware,dbms_transactions_sample.pdf,3,2,781,"SQL COMMANDS AND INDEXING
+3. SQL Commands
+SELECT:
+Retrieves records from a database table. INSERT:
+Adds new records to a database table. UPDATE:
+Modifies existing records in a database table. DELETE:
+Removes records from a database table. CREATE TABLE:
+Creates a new table in a database. 4. Database Indexing
+A database index is a data structure that improves the speed
+of data retrieval operations. Indexes help databases find records without scanning every row
+of a table. A primary index is generally associated with the primary key
+of a database table. A secondary index provides an additional way to access records
+using columns other than the primary key. 5. Advantages and Limitations of Indexing
+Advantages:
+- Improves data retrieval speed. - Helps optimize search queries."
+sentence_aware,dbms_transactions_sample.pdf,4,2,308,"5. Advantages and Limitations of Indexing
+Advantages:
+- Improves data retrieval speed. - Helps optimize search queries. - Reduces the need for full table scans. Limitations:
+- Requires additional storage space. - Can slow down INSERT, UPDATE and DELETE operations
+  because indexes may need to be maintained."

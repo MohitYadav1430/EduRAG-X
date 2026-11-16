@@ -1,0 +1,21 @@
+query,query_type,threshold,retrieved_chunks,precision_at_3,recall_at_3,reciprocal_rank,no_chunks_after_threshold,retrieved_chunk_ids
+How can duplicate data in a database be reduced?,relevant,None,3,0.6667,1.0,1.0,,dbms_sample.pdf:4; dbms_sample.pdf:1; dbms_sample.pdf:3
+How can duplicate data in a database be reduced?,relevant,0.5,3,0.6667,1.0,1.0,,dbms_sample.pdf:4; dbms_sample.pdf:1; dbms_sample.pdf:3
+How can duplicate data in a database be reduced?,relevant,0.6,3,0.6667,1.0,1.0,,dbms_sample.pdf:4; dbms_sample.pdf:1; dbms_sample.pdf:3
+How can duplicate data in a database be reduced?,relevant,0.7,1,0.3333,0.5,1.0,,dbms_sample.pdf:4
+Explain ACID properties in DBMS.,relevant,None,3,0.3333,1.0,1.0,,dbms_transactions_sample.pdf:1; dbms_sample.pdf:1; dbms_transactions_sample.pdf:2
+Explain ACID properties in DBMS.,relevant,0.5,3,0.3333,1.0,1.0,,dbms_transactions_sample.pdf:1; dbms_sample.pdf:1; dbms_transactions_sample.pdf:2
+Explain ACID properties in DBMS.,relevant,0.6,3,0.3333,1.0,1.0,,dbms_transactions_sample.pdf:1; dbms_sample.pdf:1; dbms_transactions_sample.pdf:2
+Explain ACID properties in DBMS.,relevant,0.7,1,0.3333,1.0,1.0,,dbms_transactions_sample.pdf:1
+What are the different SQL commands?,relevant,None,3,0.3333,1.0,1.0,,dbms_transactions_sample.pdf:3; dbms_transactions_sample.pdf:1; dbms_transactions_sample.pdf:2
+What are the different SQL commands?,relevant,0.5,3,0.3333,1.0,1.0,,dbms_transactions_sample.pdf:3; dbms_transactions_sample.pdf:1; dbms_transactions_sample.pdf:2
+What are the different SQL commands?,relevant,0.6,3,0.3333,1.0,1.0,,dbms_transactions_sample.pdf:3; dbms_transactions_sample.pdf:1; dbms_transactions_sample.pdf:2
+What are the different SQL commands?,relevant,0.7,2,0.3333,1.0,1.0,,dbms_transactions_sample.pdf:3; dbms_transactions_sample.pdf:1
+What is database indexing?,relevant,None,3,0.3333,1.0,0.5,,dbms_transactions_sample.pdf:4; dbms_transactions_sample.pdf:3; dbms_sample.pdf:1
+What is database indexing?,relevant,0.5,3,0.3333,1.0,0.5,,dbms_transactions_sample.pdf:4; dbms_transactions_sample.pdf:3; dbms_sample.pdf:1
+What is database indexing?,relevant,0.6,3,0.3333,1.0,0.5,,dbms_transactions_sample.pdf:4; dbms_transactions_sample.pdf:3; dbms_sample.pdf:1
+What is database indexing?,relevant,0.7,2,0.3333,1.0,0.5,,dbms_transactions_sample.pdf:4; dbms_transactions_sample.pdf:3
+Explain the process of photosynthesis.,unrelated,None,3,,,,False,dbms_sample.pdf:1; dbms_transactions_sample.pdf:3; dbms_sample.pdf:2
+Explain the process of photosynthesis.,unrelated,0.5,3,,,,False,dbms_sample.pdf:1; dbms_transactions_sample.pdf:3; dbms_sample.pdf:2
+Explain the process of photosynthesis.,unrelated,0.6,0,,,,True,
+Explain the process of photosynthesis.,unrelated,0.7,0,,,,True,

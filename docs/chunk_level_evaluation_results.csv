@@ -1,0 +1,6 @@
+query,query_type,retrieved_chunks,precision_at_3,recall_at_3,reciprocal_rank,no_chunks_retrieved,retrieved_chunk_ids
+How can duplicate data in a database be reduced?,relevant,3,0.6667,1.0,1.0,False,dbms_sample.pdf:4; dbms_sample.pdf:1; dbms_sample.pdf:3
+Explain ACID properties in DBMS.,relevant,3,0.3333,1.0,1.0,False,dbms_transactions_sample.pdf:1; dbms_sample.pdf:1; dbms_transactions_sample.pdf:2
+What are the different SQL commands?,relevant,3,0.3333,1.0,1.0,False,dbms_transactions_sample.pdf:3; dbms_transactions_sample.pdf:1; dbms_transactions_sample.pdf:2
+What is database indexing?,relevant,3,0.3333,1.0,0.5,False,dbms_transactions_sample.pdf:4; dbms_transactions_sample.pdf:3; dbms_sample.pdf:1
+Explain the process of photosynthesis.,unrelated,3,,,,False,dbms_sample.pdf:1; dbms_transactions_sample.pdf:3; dbms_sample.pdf:2

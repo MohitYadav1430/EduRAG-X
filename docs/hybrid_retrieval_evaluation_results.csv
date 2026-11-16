@@ -1,0 +1,16 @@
+method,query,query_type,retrieved_chunks,precision_at_3,recall_at_3,mrr,retrieval_time_seconds,no_chunks_retrieved,retrieved_chunk_ids
+Semantic,How can duplicate data in a database be reduced?,relevant,3,0.6667,1.0,1.0,0.6443,False,dbms_sample.pdf:4; dbms_sample.pdf:1; dbms_sample.pdf:3
+Semantic,Explain ACID properties in DBMS.,relevant,3,0.3333,1.0,1.0,0.6986,False,dbms_transactions_sample.pdf:1; dbms_sample.pdf:1; dbms_transactions_sample.pdf:2
+Semantic,What are the different SQL commands?,relevant,3,0.3333,1.0,1.0,0.618,False,dbms_transactions_sample.pdf:3; dbms_transactions_sample.pdf:1; dbms_transactions_sample.pdf:2
+Semantic,What is database indexing?,relevant,3,0.3333,1.0,0.5,0.6932,False,dbms_transactions_sample.pdf:4; dbms_transactions_sample.pdf:3; dbms_sample.pdf:1
+Semantic,Explain the process of photosynthesis.,unrelated,3,,,,0.599,False,dbms_sample.pdf:1; dbms_transactions_sample.pdf:3; dbms_sample.pdf:2
+BM25,How can duplicate data in a database be reduced?,relevant,3,0.3333,0.5,0.5,0.0027,False,dbms_sample.pdf:3; dbms_sample.pdf:4; dbms_transactions_sample.pdf:3
+BM25,Explain ACID properties in DBMS.,relevant,3,0.3333,1.0,1.0,0.0003,False,dbms_transactions_sample.pdf:1; dbms_sample.pdf:1; dbms_sample.pdf:3
+BM25,What are the different SQL commands?,relevant,3,0.3333,1.0,1.0,0.0003,False,dbms_transactions_sample.pdf:3; dbms_transactions_sample.pdf:1; dbms_sample.pdf:1
+BM25,What is database indexing?,relevant,3,0.3333,1.0,1.0,0.0002,False,dbms_transactions_sample.pdf:3; dbms_transactions_sample.pdf:4; dbms_transactions_sample.pdf:1
+BM25,Explain the process of photosynthesis.,unrelated,3,,,,0.0003,False,dbms_sample.pdf:1; dbms_transactions_sample.pdf:2; dbms_transactions_sample.pdf:3
+Hybrid,How can duplicate data in a database be reduced?,relevant,3,0.6667,1.0,1.0,0.6111,False,dbms_sample.pdf:4; dbms_sample.pdf:3; dbms_sample.pdf:1
+Hybrid,Explain ACID properties in DBMS.,relevant,3,0.3333,1.0,1.0,0.6064,False,dbms_transactions_sample.pdf:1; dbms_sample.pdf:1; dbms_transactions_sample.pdf:2
+Hybrid,What are the different SQL commands?,relevant,3,0.3333,1.0,1.0,0.7238,False,dbms_transactions_sample.pdf:3; dbms_transactions_sample.pdf:1; dbms_transactions_sample.pdf:2
+Hybrid,What is database indexing?,relevant,3,0.3333,1.0,0.5,0.5911,False,dbms_transactions_sample.pdf:4; dbms_transactions_sample.pdf:3; dbms_sample.pdf:1
+Hybrid,Explain the process of photosynthesis.,unrelated,3,,,,0.6348,False,dbms_sample.pdf:1; dbms_transactions_sample.pdf:3; dbms_transactions_sample.pdf:2

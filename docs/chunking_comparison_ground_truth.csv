@@ -1,0 +1,6 @@
+query,query_type,fixed_expected_chunks,sentence_expected_chunks
+"How can duplicate data in a database be reduced?",relevant,"dbms_sample.pdf:1;dbms_sample.pdf:4","dbms_sample.pdf:1;dbms_sample.pdf:4"
+"Explain ACID properties in DBMS.",relevant,"dbms_transactions_sample.pdf:1","dbms_transactions_sample.pdf:1"
+"What are the different SQL commands?",relevant,"dbms_transactions_sample.pdf:3","dbms_transactions_sample.pdf:3"
+"What is database indexing?",relevant,"dbms_transactions_sample.pdf:3","dbms_transactions_sample.pdf:3"
+"Explain the process of photosynthesis.",unrelated,"",""

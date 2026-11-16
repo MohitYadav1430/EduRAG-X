@@ -1,0 +1,6 @@
+﻿query,expected_relevant_sources,query_type
+"How can duplicate data in a database be reduced?","dbms_sample.pdf",relevant
+"Explain ACID properties in DBMS.","dbms_transactions_sample.pdf",relevant
+"What are the different SQL commands?","dbms_transactions_sample.pdf",relevant
+"What is database indexing?","dbms_transactions_sample.pdf",relevant
+"Explain the process of photosynthesis.","",unrelated

@@ -1,0 +1,21 @@
+query,query_type,threshold,retrieved_documents,precision_at_2,recall_at_3,reciprocal_rank,no_documents_after_threshold,retrieved_sources
+How can duplicate data in a database be reduced?,relevant,None,2,0.5,1.0,1.0,,dbms_sample.pdf; dbms_transactions_sample.pdf
+How can duplicate data in a database be reduced?,relevant,0.5,2,0.5,1.0,1.0,,dbms_sample.pdf; dbms_transactions_sample.pdf
+How can duplicate data in a database be reduced?,relevant,0.6,2,0.5,1.0,1.0,,dbms_sample.pdf; dbms_transactions_sample.pdf
+How can duplicate data in a database be reduced?,relevant,0.7,1,0.5,1.0,1.0,,dbms_sample.pdf
+Explain ACID properties in DBMS.,relevant,None,2,0.5,1.0,1.0,,dbms_transactions_sample.pdf; dbms_sample.pdf
+Explain ACID properties in DBMS.,relevant,0.5,2,0.5,1.0,1.0,,dbms_transactions_sample.pdf; dbms_sample.pdf
+Explain ACID properties in DBMS.,relevant,0.6,2,0.5,1.0,1.0,,dbms_transactions_sample.pdf; dbms_sample.pdf
+Explain ACID properties in DBMS.,relevant,0.7,1,0.5,1.0,1.0,,dbms_transactions_sample.pdf
+What are the different SQL commands?,relevant,None,2,0.5,1.0,1.0,,dbms_transactions_sample.pdf; dbms_sample.pdf
+What are the different SQL commands?,relevant,0.5,2,0.5,1.0,1.0,,dbms_transactions_sample.pdf; dbms_sample.pdf
+What are the different SQL commands?,relevant,0.6,2,0.5,1.0,1.0,,dbms_transactions_sample.pdf; dbms_sample.pdf
+What are the different SQL commands?,relevant,0.7,1,0.5,1.0,1.0,,dbms_transactions_sample.pdf
+What is database indexing?,relevant,None,2,0.5,1.0,1.0,,dbms_transactions_sample.pdf; dbms_sample.pdf
+What is database indexing?,relevant,0.5,2,0.5,1.0,1.0,,dbms_transactions_sample.pdf; dbms_sample.pdf
+What is database indexing?,relevant,0.6,2,0.5,1.0,1.0,,dbms_transactions_sample.pdf; dbms_sample.pdf
+What is database indexing?,relevant,0.7,1,0.5,1.0,1.0,,dbms_transactions_sample.pdf
+Explain the process of photosynthesis.,unrelated,None,2,,,,False,dbms_sample.pdf; dbms_transactions_sample.pdf
+Explain the process of photosynthesis.,unrelated,0.5,2,,,,False,dbms_sample.pdf; dbms_transactions_sample.pdf
+Explain the process of photosynthesis.,unrelated,0.6,0,,,,True,
+Explain the process of photosynthesis.,unrelated,0.7,0,,,,True,

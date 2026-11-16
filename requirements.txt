@@ -1,0 +1,10 @@
+streamlit==1.67.0
+google-genai==3.3.0
+python-dotenv==1.2.4
+rank-bm25==0.2.2
+PyMuPDF==2.1
+faiss-cpu==1.16.0
+numpy==2.5.4
+
+# Testing
+pytest==9.2.0

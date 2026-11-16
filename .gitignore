@@ -1,0 +1,16 @@
+﻿venv/
+.env
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.idea/
+.vscode/
+data/*
+!data/sample_documents/
+!data/sample_documents/.gitkeep
+data/sample_documents/sample.pdf
+*.log
+
+# Backup files
+*.backup
