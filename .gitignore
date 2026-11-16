@@ -14,3 +14,6 @@ data/sample_documents/sample.pdf
 
 # Backup files
 *.backup
+
+# Local project structure dump
+project_structure.txt

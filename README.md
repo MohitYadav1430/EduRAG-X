@@ -1,8 +1,33 @@
-﻿# EduRAG-X
+﻿<p align="center">
+  <img src="assets/banner.png" alt="EduRAG-X Banner" width="100%">
+</p>
+<p align="center">
+  <a href="https://edurag-x-unaytubqrmlkxpwijnjdte.streamlit.app/">
+    <img src="https://img.shields.io/badge/🚀_LIVE_DEMO-Open_Application-success?style=for-the-badge" alt="Live Demo">
+  </a>
+  <a href="https://github.com/MohitYadav1430/EduRAG-X">
+    <img src="https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github" alt="GitHub">
+  </a>
+</p>
+# EduRAG-X
 
 ### An Intelligent, Evidence-Aware Hybrid RAG System for Adaptive Teaching and Research Assistance
 
 EduRAG-X is a document-grounded AI teaching assistant that combines semantic search, keyword retrieval, evidence filtering, citation validation, and claim-level evidence verification to provide more reliable answers from uploaded PDF documents.
+
+## Application Preview
+
+<p align="center">
+  <img src="assets/screenshots/homepage.png" alt="EduRAG-X Homepage" width="90%">
+</p>
+
+## About EduRAG-X
+
+EduRAG-X is an AI-powered teaching and research assistant designed to make document-based learning more reliable through hybrid retrieval and evidence verification.
+
+Unlike a basic document chatbot, EduRAG-X combines semantic search, keyword retrieval, citation validation, and claim-level evidence verification to improve answer traceability.
+
+The system also supports general AI conversations beyond uploaded documents.
 
 ## Key Features
 
@@ -16,6 +41,16 @@ EduRAG-X is a document-grounded AI teaching assistant that combines semantic sea
 - **Evidence Verification:** Uses Gemini to classify answer claims as SUPPORTED, UNSUPPORTED, or UNCERTAIN.
 - **General AI Assistant:** Supports general questions and different learning modes.
 - **Processing History:** Tracks document ingestion status.
+
+## Built With
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
+  <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white">
+  <img src="https://img.shields.io/badge/Google_Gemini-8E75B2?style=for-the-badge&logo=google&logoColor=white">
+  <img src="https://img.shields.io/badge/FAISS-005571?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white">
+</p>
 
 ## Technology Stack
 
@@ -44,6 +79,9 @@ EduRAG-X is a document-grounded AI teaching assistant that combines semantic sea
 8. Evidence relevance filtering selects relevant chunks.
 9. Gemini generates an evidence-grounded answer.
 10. Citation validation and evidence verification evaluate the generated response.
+
+For a detailed system architecture, see
+[Architecture Documentation](docs/architecture.md).
 
 ## Project Structure
 
@@ -167,6 +205,13 @@ Detailed experimental records are available in the `docs/` directory.
 - Misconception detection
 - Adaptive learning recommendations
 - Larger-scale evaluation and benchmarking
+
+## Current Limitations
+
+- Retrieval evaluation is currently based on a small synthetic dataset.
+- Evidence verification depends on Gemini model judgments.
+- Citation validation checks source and page references, not complete semantic correctness.
+- Large-scale evaluation and multi-user testing are still pending.
 
 ## Future Scope
 
