@@ -20,7 +20,7 @@ from src.edurag_x.ingestion.processing_history import ProcessingHistory
 
 st.set_page_config(
     page_title="EduRAG-X | AI Teaching Assistant",
-    page_icon="??",
+    page_icon="",
     layout="wide"
 )
 
@@ -78,7 +78,7 @@ if "answer_result" not in st.session_state:
 # --------------------------------------------------
 
 st.markdown(
-    '<div class="main-title">?? EduRAG-X</div>',
+    '<div class="main-title"> EduRAG-X</div>',
     unsafe_allow_html=True
 )
 
@@ -99,7 +99,7 @@ st.divider()
 
 with st.sidebar:
 
-    st.header("?? System Information")
+    st.header(" System Information")
 
     st.success("Application Interface Active")
 
@@ -162,7 +162,7 @@ left_column, right_column = st.columns([1, 1])
 with left_column:
 
     st.markdown(
-        '<div class="section-title">?? Upload Documents</div>',
+        '<div class="section-title"> Upload Documents</div>',
         unsafe_allow_html=True
     )
     uploaded_files = st.file_uploader(
@@ -191,10 +191,10 @@ with left_column:
 
         for file in uploaded_files:
 
-            st.write(f"?? {file.name}")
+            st.write(f" {file.name}")
 
         process_button = st.button(
-            "?? Process Documents",
+            " Process Documents",
             use_container_width=True
         )
 
@@ -331,7 +331,7 @@ with left_column:
                 st.session_state.answer_result = None
 
             st.divider()
-            st.subheader("?? Processing Summary")
+            st.subheader(" Processing Summary")
 
             col1, col2, col3 = st.columns(3)
 
@@ -380,7 +380,7 @@ with left_column:
 
     st.divider()
 
-    st.markdown("### ?? Knowledge Base Management")
+    st.markdown("###  Knowledge Base Management")
 
     documents = ingestion_pipeline.vector_store.documents
 
@@ -407,7 +407,7 @@ with left_column:
 
     if documents:
 
-        st.markdown("#### ?? Indexed Document Details")
+        st.markdown("####  Indexed Document Details")
 
         for source in unique_sources:
 
@@ -422,7 +422,7 @@ with left_column:
                 for document in source_chunks
             }
 
-            with st.expander(f"?? {source}"):
+            with st.expander(f" {source}"):
 
                 detail_col1, detail_col2 = st.columns(2)
 
@@ -456,7 +456,7 @@ with left_column:
 with right_column:
 
     st.markdown(
-        '<div class="section-title">?? Ask a Question</div>',
+        '<div class="section-title"> Ask a Question</div>',
         unsafe_allow_html=True
     )
 
@@ -483,7 +483,7 @@ with right_column:
         )
 
     ask_button = st.button(
-        "?? Generate Answer",
+        " Generate Answer",
         use_container_width=True
     )
 
@@ -557,7 +557,7 @@ with right_column:
 # --------------------------------------------------
 
 st.divider()
-st.markdown("### ?? Document Processing History")
+st.markdown("###  Document Processing History")
 
 history_records = processing_history.get_history()
 
@@ -631,7 +631,7 @@ if result:
 
     st.divider()
 
-    st.header("?? Generated Answer")
+    st.header(" Generated Answer")
 
     if result["status"] == "COMPLETED":
 
@@ -648,7 +648,7 @@ if result:
         # CITATION VALIDATION
         # ------------------------------------------
 
-        st.subheader("?? Citation Validation")
+        st.subheader(" Citation Validation")
 
         citation_result = result["citation_validation"]
 
@@ -812,7 +812,7 @@ if result:
         # RETRIEVED SOURCES
         # ------------------------------------------
 
-        st.subheader("?? Retrieved Sources")
+        st.subheader(" Retrieved Sources")
 
         for index, chunk in enumerate(
             result["retrieved_chunks"],
