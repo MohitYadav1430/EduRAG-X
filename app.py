@@ -12,7 +12,7 @@ from src.edurag_x.rag.evidence_relevance_filter import EvidenceRelevanceFilter
 
 from src.edurag_x.rag.rag_pipeline import RAGPipeline
 from src.edurag_x.ingestion.processing_history import ProcessingHistory
-
+from src.edurag_x.storage.storage_manager import StorageManager
 
 # --------------------------------------------------
 # PAGE CONFIGURATION
@@ -126,10 +126,14 @@ with st.sidebar:
 
 try:
 
+    storage_manager = StorageManager()
+
     if st.session_state.ingestion_pipeline is None:
 
         st.session_state.ingestion_pipeline = (
-            DocumentIngestionPipeline()
+            DocumentIngestionPipeline(
+                storage_manager=storage_manager
+            )
         )
 
     ingestion_pipeline = (
@@ -137,7 +141,10 @@ try:
     )
 
     if "processing_history" not in st.session_state:
-        st.session_state.processing_history = ProcessingHistory()
+
+        st.session_state.processing_history = ProcessingHistory(
+            storage_manager=storage_manager
+        )
 
     processing_history = st.session_state.processing_history
 
@@ -146,7 +153,6 @@ except Exception as error:
     st.error(f"Backend initialization failed: {error}")
 
     st.stop()
-
 
 # --------------------------------------------------
 # MAIN LAYOUT
@@ -277,6 +283,11 @@ with left_column:
 
                     with open(pdf_path, "wb") as file:
                         file.write(uploaded_file.getvalue())
+
+                    storage_manager.upload_file(
+                        pdf_path,
+                        f"uploads/{original_name}"
+                    )
 
                     result = ingestion_pipeline.ingest_pdf(pdf_path)
 

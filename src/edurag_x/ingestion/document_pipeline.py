@@ -1,4 +1,6 @@
 ﻿from pathlib import Path
+import shutil
+import tempfile
 
 from src.edurag_x.ingestion.pdf_processor import PDFProcessor
 from src.edurag_x.ingestion.text_chunker import TextChunker
@@ -11,7 +13,8 @@ class DocumentIngestionPipeline:
     def __init__(
         self,
         vector_store=None,
-        storage_dir="data/vector_store"
+        storage_dir="data/vector_store",
+        storage_manager=None
     ):
 
         self.pdf_processor = PDFProcessor()
@@ -24,18 +27,78 @@ class DocumentIngestionPipeline:
         self.embedding_engine = EmbeddingEngine()
 
         self.storage_dir = Path(storage_dir)
+        self.storage_manager = storage_manager
 
         if vector_store is not None:
             self.vector_store = vector_store
 
-        elif (
-            (self.storage_dir / "index.faiss").exists()
-            and (self.storage_dir / "documents.json").exists()
-        ):
-            self.vector_store = VectorStore.load(self.storage_dir)
-
         else:
-            self.vector_store = VectorStore()
+            self._restore_cloud_store()
+
+            if (
+                (self.storage_dir / "index.faiss").exists()
+                and (self.storage_dir / "documents.json").exists()
+            ):
+                self.vector_store = VectorStore.load(self.storage_dir)
+
+            else:
+                self.vector_store = VectorStore()
+
+    def _restore_cloud_store(self):
+
+        if self.storage_manager is None:
+            return
+
+        try:
+            with tempfile.TemporaryDirectory() as temp_dir:
+
+                temp_dir = Path(temp_dir)
+
+                index_path = temp_dir / "index.faiss"
+                documents_path = temp_dir / "documents.json"
+
+                self.storage_manager.download_file(
+                    "vector_store/index.faiss",
+                    index_path
+                )
+
+                self.storage_manager.download_file(
+                    "vector_store/documents.json",
+                    documents_path
+                )
+
+                self.storage_dir.mkdir(
+                    parents=True,
+                    exist_ok=True
+                )
+
+                shutil.copy2(
+                    index_path,
+                    self.storage_dir / "index.faiss"
+                )
+
+                shutil.copy2(
+                    documents_path,
+                    self.storage_dir / "documents.json"
+                )
+
+        except Exception as error:
+            self.cloud_restore_error = str(error)
+
+    def _sync_cloud_store(self):
+
+        if self.storage_manager is None:
+            return
+
+        self.storage_manager.upload_file(
+            self.storage_dir / "index.faiss",
+            "vector_store/index.faiss"
+        )
+
+        self.storage_manager.upload_file(
+            self.storage_dir / "documents.json",
+            "vector_store/documents.json"
+        )
 
     def ingest_pdf(self, pdf_path):
 
@@ -66,8 +129,11 @@ class DocumentIngestionPipeline:
             embeddings
         )
 
-        # Step 5: Automatically save vector database
+        # Step 5: Save local vector database
         self.vector_store.save(self.storage_dir)
+
+        # Step 6: Sync vector database with Supabase
+        self._sync_cloud_store()
 
         return {
             "source": pdf_path.name,

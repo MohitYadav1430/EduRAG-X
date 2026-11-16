@@ -2,27 +2,52 @@ import json
 from pathlib import Path
 from datetime import datetime, timezone
 
+from src.edurag_x.storage.storage_manager import StorageManager
+
 
 class ProcessingHistory:
 
-    def __init__(self, history_file="data/history/processing_history.json"):
-        self.history_file = Path(history_file)
+    def __init__(
+        self,
+        history_file="data/history/processing_history.json",
+        storage_manager=None
+    ):
 
-        # Create history directory if it does not exist
+        self.history_file = Path(history_file)
+        self.storage_manager = storage_manager
+
         self.history_file.parent.mkdir(
             parents=True,
             exist_ok=True
         )
 
-        # Create empty JSON file if it does not exist
+        # Restore history from Supabase
+        if self.storage_manager is not None:
+            try:
+                self.storage_manager.download_file(
+                    "history/processing_history.json",
+                    self.history_file
+                )
+            except Exception:
+                pass
+
         if not self.history_file.exists():
             self.history_file.write_text(
                 "[]",
                 encoding="utf-8"
             )
 
+    def _sync_cloud(self):
+
+        if self.storage_manager is None:
+            return
+
+        self.storage_manager.upload_file(
+            self.history_file,
+            "history/processing_history.json"
+        )
+
     def get_history(self):
-        """Return all saved processing records."""
 
         try:
             with open(
@@ -38,7 +63,7 @@ class ProcessingHistory:
 
                 return []
 
-        except json.JSONDecodeError:
+        except (json.JSONDecodeError, FileNotFoundError):
             return []
 
     def add_record(
@@ -50,7 +75,6 @@ class ProcessingHistory:
         vectors=0,
         error=None
     ):
-        """Save a new document processing record."""
 
         history = self.get_history()
 
@@ -81,10 +105,11 @@ class ProcessingHistory:
                 ensure_ascii=False
             )
 
+        self._sync_cloud()
+
         return record
 
     def clear_history(self):
-        """Remove all processing history."""
 
         with open(
             self.history_file,
@@ -93,3 +118,5 @@ class ProcessingHistory:
         ) as file:
 
             json.dump([], file, indent=4)
+
+        self._sync_cloud()
